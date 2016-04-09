@@ -21,7 +21,7 @@ def getDaysFromEpoch():
 def readConf():
     config = json.loads(json.load(open(".flowrc", 'r')))
     now = getDaysFromEpoch()
-    if now - config['days'] > 1:
+    if now - config['days'] > 0:
         # a brand new day, reset all flags
         config = {'days': now, 'busted': 0, 'fifty': 0, 'seventy': 0, 'ninety': 0}
         writConf(config)
