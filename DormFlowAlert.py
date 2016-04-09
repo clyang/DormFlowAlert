@@ -67,7 +67,7 @@ def sendAlert(config, msg):
 def checkUsage(config, download, upload):
     index = ""
     usage_rate = (download + upload) / DAY_LIMIT
-    msg_template = "您還剩%.2f MB (%.0f%%)的流量可用(本日還剩%d小時)，統計資訊如下：\n\n下載量: %.2f MB\n上傳量: %.2f MB\n總使用量: %.2f MB"
+    msg_template = "您還剩%.2f MB (%.0f%%)的流量可用，本日還剩%d小時，統計資訊如下：\n\n下載量: %.2f MB\n上傳量: %.2f MB\n總使用量: %.2f MB"
 
     if usage_rate > 1.0:
         index = "busted"
