@@ -4,6 +4,7 @@ import datetime
 import requests
 import random
 import json
+import time
 import sys
 import re
 
@@ -91,7 +92,7 @@ def checkUsage(config, download, upload):
 if __name__ == "__main__":
     # sleep few seconds before we start
     # we don't want to DDoS newflow.dorm
-    sleep(randint(1,10))
+    time.sleep(random.randint(1,10))
 
     # Fire in the hole!
     download, upload = getFlowStats()
