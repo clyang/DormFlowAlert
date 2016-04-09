@@ -25,4 +25,4 @@ DormFlowAlert
 
 有圖有真相
 ----------
-![alt_tag](https://i.imgur.com/YX5WnbR.png)
+![alt_tag](https://i.imgur.com/0yocKo1.png)
