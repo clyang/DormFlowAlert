@@ -54,8 +54,8 @@ def getFlowStats():
 
         return sum(downloads), sum(uploads)
 
-def sendAlert(config, msg):
-    req_url = "https://csie.io/lineme?token=%s&msg=%s" % (LINE_TOKEN, msg)
+def sendAlert(config, msg, im):
+    req_url = "https://csie.io/msgme?token=%s&msg=%s&im=%s" % (LINE_TOKEN, msg, im)
     r = requests.get(req_url)
     if r.text == "OK":
         # message sent. safe to update configs
@@ -86,7 +86,7 @@ def checkUsage(config, download, upload):
             msg = msg_template % (DAY_LIMIT-(download + upload), 100-usage_rate*100, (24 - datetime.datetime.now().hour), download, upload, (download + upload))
 
         config[index] = 1
-        sendAlert(config, msg)
+        sendAlert(config, msg, "line") # for use "fb" for Facebook
 
 
 if __name__ == "__main__":
