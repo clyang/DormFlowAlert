@@ -49,10 +49,10 @@ def getFlowStats():
         sys.exit(1)
     else:
         allTraffic = [float(i) for i in match]
-        downloads = allTraffic[:len(allTraffic)/2]
-        uploads = allTraffic[len(allTraffic)/2:]
+        downloads = sum(allTraffic[:len(allTraffic)/2])
+        uploads = sum(allTraffic[len(allTraffic)/2:])
 
-        return sum(downloads), sum(uploads)
+        return downloads, uploads
 
 def sendAlert(config, msg, im):
     #req_url = "https://csie.io/msgme?token=%s&msg=%s&im=%s" % (LINE_TOKEN, msg, im)
@@ -96,6 +96,8 @@ if __name__ == "__main__":
     time.sleep(random.randint(1,10))
 
     # Fire in the hole!
-    download, upload = getFlowStats()
     config = readConf()
-    checkUsage(config, download, upload)
+    if config['busted'] == 0:
+        # Only check stats if traffic hasn't busted
+        download, upload = getFlowStats()
+        checkUsage(config, download, upload)
