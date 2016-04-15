@@ -55,7 +55,8 @@ def getFlowStats():
         return sum(downloads), sum(uploads)
 
 def sendAlert(config, msg, im):
-    req_url = "https://csie.io/msgme?token=%s&msg=%s&im=%s" % (LINE_TOKEN, msg, im)
+    #req_url = "https://csie.io/msgme?token=%s&msg=%s&im=%s" % (LINE_TOKEN, msg, im)
+    req_url = "https://csie.io/lineme?token=%s&msg=%s" % (LINE_TOKEN, msg)
     r = requests.get(req_url)
     if r.text == "OK":
         # message sent. safe to update configs
