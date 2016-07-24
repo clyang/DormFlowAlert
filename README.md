@@ -1,6 +1,6 @@
 DormFlowAlert
 ----
-快速的宿舍網路總是讓人一用上癮，但是每天8GB的流量限制實在是讓人無奈，尤其是一旦超流就得被斷線，更是讓人生氣又無奈，所以本程式結合[csie.io的Line通知功能](https://csie.io/linefaq)，定期檢查您宿網使用的流量，並且在使用流量到達50%、70%、90%以及100%時，自動發出Line通知至您的裝置，讓您可以預先做出處置（如：遠端回去關機或是打電話給室友拔線等等），省去被斷線的痛苦經驗！使用本程式需要符合下列條件：
+快速的宿舍網路總是讓人一用上癮，但是每天8GB的流量限制實在是讓人無奈，尤其是一旦超流就得被斷線，更是讓人生氣又無奈，所以本程式結合[csie.io的跨IM通知平台](https://csie.io/msgfaq)，定期檢查您宿網使用的流量，並且在使用流量到達50%、70%、90%以及100%時，自動發出Line通知至您的裝置，讓您可以預先做出處置（如：遠端回去關機或是打電話給室友拔線等等），省去被斷線的痛苦經驗！使用本程式需要符合下列條件：
 
 - 你必須是[csie.io](https://csie.io)的使用者
 - 你住在[中正大學](http://www.ccu.edu.tw/)學生宿舍
@@ -15,7 +15,7 @@ DormFlowAlert
 - git clone https://github.com/clyang/DormFlowAlert
 - 編輯檔案： `cd DormFlowAlert && vim DormFlowAlert.py`
   - 將`MYIP`改為您宿網的IP
-  - 將`LINE_TOKEN`改為您的專屬token，（[您可在此取得](https://csie.io/linefaq)）
+  - 將`LINE_TOKEN`改為您的專屬token，（[您可在此取得](https://csie.io/msgfaq)）
   - 存檔
 - 最後設定每三分鐘檢查一次，使用下列指令`crontab -e`，在檔案最後新增下列這行
   - `*/3 * * * * ~/DormFlowAlert/DormFlowAlert.py >> ~/DormFlowAlert/flow.log`
