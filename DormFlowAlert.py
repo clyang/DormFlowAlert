@@ -11,7 +11,7 @@ import re
 # 記得把MYIP跟LINE_TOKEN改成自己的！
 MYIP = "140.123.111.111"
 LINE_TOKEN = "kerker-12344321"
-DAY_LIMIT = 8300
+DAY_LIMIT = 10300
 
 def getDaysFromEpoch():
     today = datetime.date.today()
